@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zero Quantum Frequency</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4b2a73">
+<style>
+body{
+margin:0;
+font-family:system-ui;
+background:#071826;
+color:#f1e2a6;
+text-align:center;
+}
+header{
+background:linear-gradient(90deg,#5b2c83,#402060);
+padding:18px;
+font-size:22px;
+font-weight:bold;
+color:white;
+}
+
+.container{
+padding:20px;
+max-width:420px;
+margin:auto;
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+align-items:center;   /* बाकी content center रहेगा */
+}
+
+.longtext{
+color:#ffffff;
+line-height:1.9;
+font-size:17px;
+text-align:justify;
+margin-top:32px;
+margin-bottom:18px;
+letter-spacing:0.3px;
+}
+h1{
+font-size:34px;
+margin-top:10px;
+}
+
+.subtitle{
+color:#d9c27a;
+margin-bottom:25px;
+}
+
+.btn{
+display:block;
+background:#000;
+color:#e8d48a;
+padding:16px;
+margin:14px auto;
+width:90%;
+max-width:400px;
+border-radius:18px;
+text-decoration:none;
+font-size:20px;
+box-shadow:0 0 18px rgba(255,215,0,0.2);
+}
+
+.btn:hover{
+background:#121212;
+}
+
+/* ===== Universal App Back Button ===== */
+/* ===== Universal App Back Button ===== */
+/* ===== Universal App Back Button ===== */
+.appBack{
+display:block;
+width:max-content;
+margin:14px 0 14px 14px;
+text-align:left;
+
+background:#4b2a73;
+color:#ffffff;
+padding:9px 16px;
+border-radius:12px;
+font-size:15px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,0.35);
+}
+
+.appBack:active{
+transform:scale(0.96);
+}
+.page{display:none;}
+.active{display:block;}
+
+.quote{
+color:#f1e2a6;
+font-weight:600;
+font-size:18px;
+line-height:1.8;
+max-width:380px;
+margin:12px auto;
+font-style:italic;
+}
+.big{
+font-size:24px;
+}
+
+.footer{
+margin-top:40px;
+color:#aaa;
+font-size:14px;
+}
+
+
+.whiteText{
+color:#ffffff !important;
+}
+ .bookbtn{
+display:block;
+margin:18px auto;
+padding:16px;
+width:92%;
+max-width:380px;
+text-decoration:none;
+border-radius:18px;
+font-size:18px;
+font-weight:600;
+color:#000;
+background:linear-gradient(45deg,#ffd700,#ffb300);
+box-shadow:0 0 18px rgba(255,215,0,0.35);
+transition:0.25s;
+}
+
+.bookbtn:hover{
+transform:scale(1.03);
+box-shadow:0 0 28px rgba(255,215,0,0.6);
+}
+
+  /* Back button spacing */
+.back{
+display:inline-block;
+background:#666;
+color:#fff;
+padding:12px 26px;
+border-radius:16px;
+margin-top:10px;
+margin-bottom:28px;   /* 👈 यही gap बनाएगा */
+}
+
+/* Contact buttons group */
+.contact-group a{
+display:block;
+background:#555;
+color:#f1e2a6;
+padding:15px;
+margin:14px auto;
+width:92%;
+max-width:380px;
+border-radius:16px;
+text-decoration:none;
+font-size:18px;
+transition:0.25s;
+}
+
+.contact-group a:hover{
+background:#6a6a6a;
+transform:scale(1.03);
+}
+
+.engQuote{
+font-size:20px;
+line-height:1.8;
+color:#ffffff;
+max-width:380px;
+margin:14px auto 0;
+font-style:italic;
+}
+  .courseDesc{
+color:#ffffff;
+font-style:italic;
+font-size:19px;
+line-height:1.9;
+max-width:380px;
+margin:12px auto 0;
+}
+ /* Golden divider line */
+.divider{
+width:70%;
+height:1px;
+margin:26px auto 6px;
+background:linear-gradient(
+to right,
+transparent,
+rgba(255,215,120,0.85),
+transparent
+);
+opacity:0.8;
+}
+/* Drop cap (first big letter) */
+.longtext p:first-of-type::first-letter{
+font-size:44px;
+font-weight:700;
+color:#ffd36b;
+float:left;
+line-height:1;
+padding-right:8px;
+padding-top:4px;
+}
+/* Author section design */
+.authorBox{
+max-width:420px;
+margin:40px auto 20px;
+padding:22px;
+background:rgba(255,255,255,0.06);
+border-radius:18px;
+box-shadow:0 0 22px rgba(255,215,120,0.15);
+text-align:left;
+line-height:1.9;
+color:#ffffff;
+}
+
+.authorTitle{
+text-align:center;
+font-size:24px;
+font-weight:700;
+color:#ffd36b;
+margin-bottom:18px;
+}
+
+.authorBox p{
+margin-bottom:16px;
+font-size:16.8px;
+text-align:justify;
+}
+
+.authorQuote{
+margin-top:18px;
+padding:14px;
+border-left:3px solid #ffd36b;
+background:rgba(255,215,120,0.07);
+font-style:italic;
+}
+
+.pub{
+margin-top:26px;
+text-align:center;
+color:#d6c27a;
+font-size:14px;
+letter-spacing:1px;
+}
+  /* Photo gallery */
+.gallery{
+display:grid;
+grid-template-columns:1fr;   /* 👈 एक-एक करके दिखेगा */
+gap:16px;
+margin-top:25px;
+max-width:320px;
+margin-left:auto;
+margin-right:auto;
+}
+.gallery img{
+width:100%;
+border-radius:18px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 18px rgba(255,215,120,0.25);
+object-fit:cover;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 28px rgba(255,215,120,0.55);
+}
+  /* Fullscreen image viewer */
+.viewer{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.92);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.viewer img{
+max-width:92%;
+max-height:90%;
+border-radius:14px;
+box-shadow:0 0 35px rgba(255,215,120,0.5);
+}
+  /* Paper book section */
+.paperSection{
+margin-top:40px;
+padding:20px;
+background:rgba(255,255,255,0.05);
+border-radius:18px;
+box-shadow:0 0 18px rgba(255,215,120,0.15);
+}
+
+.paperTitle{
+color:#ffd36b;
+font-size:20px;
+margin-bottom:14px;
+}
+
+.paperIntro{
+color:#ffffff;
+font-size:17px;
+line-height:1.9;
+text-align:justify;
+}
+  .booksMockup img{
+  width:100%;
+  max-width:550px;   /* 👈 size छोटा किया */
+  border-radius:18px;
+  box-shadow:0 0 30px rgba(255,215,120,0.3);
+}
+.courseTagline{
+color:#f1e2a6;
+font-weight:600;
+font-size:18px;
+line-height:1.8;
+max-width:380px;
+margin:12px auto;
+font-style:normal;   /* 👈 italic हट गया */
+}
+.tagline{
+color:#ffffff;      /* white */
+font-weight:normal; /* bold हट गया */
+font-style:italic;  /* italic रहेगा */
+font-size:18px;
+margin-top:18px;
+letter-spacing:0.5px;
+}
+  .courseHighlight{
+color:#ffd700;        /* Yellow */
+font-size:20px;
+font-weight:600;
+margin-top:28px;
+line-height:1.8;
+max-width:380px;
+text-align:center;
+}
+.gitaShlok{
+color:#ffffff;
+font-style:normal;
+font-size:18px;
+line-height:1.9;
+max-width:380px;
+margin:14px auto;
+font-weight:500;
+letter-spacing:0.4px;
+
+/* ✨ Divine Glow */
+text-shadow:
+0 0 6px rgba(255, 235, 150, 0.55),
+}
+  .coursePromo{
+max-width:380px;
+margin:26px auto;
+padding:22px 20px;
+background:rgba(255,215,120,0.06);
+border-left:3px solid #ffd36b;
+border-radius:14px;
+line-height:1.9;
+color:#ffffff;
+font-size:17px;
+text-align:justify;
+box-shadow:0 0 18px rgba(255,215,120,0.15);
+}
+
+.coursePromo p{
+margin-bottom:16px;
+}
+
+.coursePromo p:last-child{
+margin-bottom:0;
+}
+
+/* Heading line */
+.coursePromoTitle{
+color:#ffd36b;
+font-size:22px;
+text-align:center;
+margin-bottom:18px;
+font-weight:600;
+letter-spacing:0.5px;
+}
+
+/* closing line highlight */
+.courseClosing{
+text-align:center;
+color:#ffd36b;
+font-size:18px;
+margin-top:14px;
+text-shadow:0 0 10px rgba(255,215,120,0.45);
+}
+  /* Coming Soon Label */
+.comingSoon{
+color:#ffd700;
+font-size:20px;
+font-weight:bold;
+letter-spacing:2px;
+margin-top:10px;
+margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+<header id="title">Home</header>
+
+<!-- HOME -->
+<div id="home" class="container page active">
+<h1>Zero Quantum<br>Frequency™</h1>
+<div class="subtitle">- RETURN TO YOUR ORIGINAL STATE -</div>
+
+<a class="btn" onclick="openPage('about','About Us')">About Us</a>
+<a class="btn" onclick="openPage('books','Books')">Books</a>
+<a class="btn" onclick="openPage('courses','Courses')">Divine Access</a>
+<a class="btn" onclick="openPage('krishna','Krishna Code')">Krishna Code</a>
+<a class="btn" href="mindos.html" target="_blank">
+🧠 Mind OS
+</a>
+<a class="btn" onclick="openPage('contact','Contact')">Contact</a>
+
+<div class="footer">
+Zero Quantum Frequency™ © Gandharwa Anand
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="container page">
+<div class="appBack" onclick="goHome()">← Back</div>
+
+<p class="big">
+जब आप Zero Quantum Frequency पर स्थिर होते हैं, तो अनावश्यक विचार शांत होकर लक्ष्य की तरंगें जागृत होती हैं।
+</p>
+
+<p class="engQuote">
+Zero Quantum Frequency reveals the space within where mental weight dissolves and life flows peacefully.
+</p>
+
+  <div class="authorBox">
+
+<div class="authorTitle">लेखक का परिचय</div>
+
+<p>
+गंधर्व आनंद एक बहुआयामी व्यक्तित्व हैं, जिनका जीवन भारतीय संस्कृति, अध्यात्म और मानवीय उत्थान के प्रति समर्पण का प्रेरणादायक उदाहरण है। वे लेखक, चिंतक, अध्यात्म मार्गदर्शक, समाजसेवी और उद्यमी के रूप में जाने जाते हैं तथा मानवता को अपने कर्म का केंद्र मानते हैं।
+</p>
+
+<p>
+उनका उद्देश्य सदैव मानव को उसकी मूल चेतना - शांति, प्रेम और सत्य - में जागृत करना रहा है। उनका विश्वास है कि जीवन की जटिलताओं का समाधान तब संभव है जब मनुष्य अपने भीतर के स्रोत से जुड़ जाए।
+</p>
+
+<p>
+उन्होंने अनेक ग्रंथों की रचना की है जिनमें ‘सारथी का संदेश’, 'सृजन-माला' , ‘नचिकेता का तीसरा वर’, ‘सनातन के सात अध्याय’, ‘भारत माता’, 'Zero Quantum Frequency', 'करना कुछ भी नहीं'  और ‘The Burning Life’ प्रमुख हैं। उनके लेखन में वेदांत दर्शन, आत्मविकास और आधुनिक जीवन के बीच एक अद्भुत सेतु दिखाई देता है।
+</p>
+
+<p>
+उनकी पुस्तक “The Burning Life” जलवायु परिवर्तन और मानव चेतना के संबंध को प्रस्तुत करती है, जबकि “सारथी का संदेश” जीवन संघर्षों में आध्यात्मिक मार्गदर्शन प्रदान करती है।
+</p>
+<p>
+उनकी पुस्तक "करना कुछ भी नहीं" साधना का सरल मार्ग बताती है- अहंकार शांत कर साक्षीभाव में स्थित होकर स्वाभाविक शांति और आत्मबोध प्राप्त करना।
+</p>
+<p>
+वे मानते हैं कि सच्ची सफलता बाहरी उपलब्धियों से नहीं, बल्कि आंतरिक संतुलन से आती है। ध्यान, आत्म-चिंतन और मौन साधना उनके जीवन का महत्वपूर्ण भाग है।
+</p>
+
+<div class="authorQuote">
+“धर्म किसी पंथ का नाम नहीं, बल्कि उस सत्य का अनुभव है जो सबको जोड़ता है।”
+</div>
+
+<p>
+वर्ष 2024 में उन्हें BRICS CCI द्वारा उनकी पुस्तक “सारथी का संदेश” के लिए सम्मानित किया गया तथा “Leader of Bharat Award 2024” से भी अलंकृत किया गया।
+</p>
+
+<div class="pub">
+BLUE DUCK PUBLICATION<br>
+SRINAGAR, J & K
+</div>
+<div class="gallery">
+
+<img src="AM.jpg">
+<img src="BR.jpg">
+<img src="MDH.jpg">
+
+</div>
+</div>
+</div>
+
+<!-- COURSES -->
+<div id="courses" class="container page">
+
+<div class="appBack" onclick="goHome()">← Back</div>
+
+<div class="comingSoon">COMING SOON</div>
+
+<!-- QUESTION BUTTON (TOP) -->
+<div style="text-align:center; margin:25px 0;">
+<a onclick="openPrashn()" style="
+display:inline-block;
+background:#6b2cff;
+color:white;
+padding:12px 20px;
+border-radius:12px;
+text-decoration:none;
+font-size:17px;
+cursor:pointer;">
+कोई प्रश्न है? यहाँ लिखें
+</a>
+</div>
+
+<h2>ZQ Frequency Starter</h2>
+
+<p class="courseTagline">
+मन की शांति का पहला कदम
+</p>
+
+<p class="courseDesc">
+यह उन्नत कोर्स आपकी चेतना और ऊर्जा को उच्च आवृत्ति पर ले जाकर स्पष्टता और आकर्षण-शक्ति को सक्रिय करता है।
+</p>
+
+<p class="courseHighlight">
+"आप एक ऐसी जेल में हैं जिसमें ना सलाखें हैं, ना दीवारें और ना ताला"
+</p>
+
+<div class="coursePromo">
+
+<div class="coursePromoTitle">ZQ Frequency Starter</div>
+
+<p>आज का मनुष्य बाहर से सफल दिखता है, पर भीतर से अशांत है। विचारों का शोर, अपेक्षाओं का दबाव और निरंतर भागदौड़ उसे ऐसी अदृश्य जेल में कैद कर देती है, जिसमें ना सलाखें हैं, ना दीवारें और ना ताला - फिर भी वह स्वतंत्र नहीं है।</p>
+
+<p>ZQ Frequency Starter उसी आंतरिक बंधन से मुक्ति का पहला कदम है। यह केवल एक कोर्स नहीं, बल्कि चेतना की दिशा बदलने की प्रक्रिया है। इस विशेष साधना-आधारित कार्यक्रम में आपको 21 गहन वीडियो और 21 मार्गदर्शित ऑडियो सत्र मिलेंगे, जो आपके मन को स्थिर करने, ऊर्जा को संतुलित करने और साक्षीभाव को जागृत करने में सहायक होंगे।</p>
+
+<p>हर वीडियो आपको धीरे-धीरे उस बिंदु तक ले जाएगा जहाँ विचारों का भार हल्का होने लगता है। हर ऑडियो सत्र आपके भीतर की मौन शक्ति को सक्रिय करेगा। यह कोर्स किसी जटिल दर्शन या कठिन साधना का आग्रह नहीं करता; यह आपको सहज, सरल और व्यावहारिक तरीके से भीतर लौटना सिखाता है।</p>
+
+<p>इसके साथ आपको मिलेगा एक डिजिटल ग्रैटिट्यूड जर्नल, जो आपके दैनिक चिंतन को नई दिशा देगा। कृतज्ञता केवल एक भावना नहीं, बल्कि चेतना को उच्च आवृत्ति पर ले जाने का माध्यम है। जब आप नियमित रूप से अपने अनुभवों को लिखते हैं, तो मन नकारात्मकता से हटकर संतुलन की ओर बढ़ता है।</p>
+
+<p>यह कोर्स उन लोगों के लिए है जो केवल ज्ञान नहीं, अनुभव चाहते हैं। जो केवल प्रेरणा नहीं, आंतरिक परिवर्तन चाहते हैं। जो बाहरी उपलब्धियों से आगे बढ़कर आत्मिक स्थिरता को समझना चाहते हैं।</p>
+
+<p>यदि आप जीवन की भागदौड़ से थक चुके हैं, यदि आप मन के शोर से ऊपर उठकर मौन की शक्ति को जानना चाहते हैं, तो यह कोर्स आपके लिए है।</p>
+
+<div class="courseClosing">
+ZQ Frequency Starter – क्योंकि सच्ची समृद्धि भीतर की शांति से प्रारंभ होती है।
+</div>
+
+<!-- QUESTION BUTTON (BOTTOM) -->
+<div style="text-align:center; margin-top:50px;">
+
+<h3 style="color:#c084fc;">साधना में प्रश्न आना प्रगति का संकेत है</h3>
+
+<p style="max-width:600px; margin:auto; line-height:1.6;">
+यदि आपके भीतर कोई उलझन है, आप यहाँ लिख सकते हैं।
+</p>
+<!-- UTTAR BUTTON -->
+<div style="text-align:center; margin-top:30px;">
+
+<h3 style="color:#ffd166;">क्या आपने पहले प्रश्न भेजा था?</h3>
+
+<p style="max-width:600px; margin:auto; line-height:1.6;">
+आपके द्वारा भेजे गए चुने हुए प्रश्नों के उत्तर यहाँ प्रकाशित किए जाते हैं।
+अपना Q-ID देखकर उत्तर पढ़ें।
+</p>
+
+<a href="uttar.html" style="
+display:inline-block;
+margin-top:18px;
+background:#f59e0b;
+color:black;
+padding:14px 22px;
+border-radius:12px;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;">
+📜 अपने उत्तर देखें
+</a>
+
+</div>
+<a onclick="openPrashn()" style="
+display:inline-block;
+margin-top:20px;
+background:#6b2cff;
+color:white;
+padding:14px 22px;
+border-radius:12px;
+text-decoration:none;
+font-size:18px;
+cursor:pointer;">
+अपने भीतर के प्रश्न पूछें
+</a>
+
+</div>
+
+</div>
+</div>
+
+<!-- KRISHNA -->
+<div id="krishna" class="container page">
+<div class="appBack" onclick="goHome()">← Back</div>
+
+<h2>Decode The Secrets of Wealth & Wisdom</h2>
+
+<p class="quote whiteText">
+✨ Return to Zero - Where Silence Speaks ✨
+</p>
+  <h2>गीता ज्ञान</h2>
+
+<p class="gitaShlok">
+न हि ज्ञानेन सदृशं पवित्रमिह विद्यते।
+तत्स्वयं योगसंसिद्धः कालेनात्मनि विन्दति॥ (गीता 4/38)
+</p>
+
+<p class="quote">
+इस संसार में दिव्यज्ञान के समान कुछ भी शुद्ध नहीं है।
+इस ज्ञान को योग के द्वारा मानव स्वयं अपने हृदय में पा लेता है।
+</p>
+
+<div class="divider"></div>
+
+<div class="longtext">
+
+  <p>यह श्लोक भगवान श्रीकृष्ण द्वारा अर्जुन को दिया गया अत्यन्त गूढ़ आध्यात्मिक संदेश है। इसमें “ज्ञान” को संसार की सबसे महान और सबसे पवित्र शक्ति बताया गया है। सामान्यतः हम पवित्रता को बाहरी वस्तुओं, तीर्थ, व्रत, स्नान या पूजा-पाठ से जोड़ते हैं; परन्तु श्रीकृष्ण यहाँ बताते हैं कि वास्तविक पवित्रता बाहरी कर्मों से नहीं, बल्कि अन्तःकरण की जागृति से आती है और उस जागृति का नाम है ज्ञान।</p>
+
+<p>यहाँ “ज्ञान” का अर्थ केवल पुस्तकीय जानकारी, शास्त्रों का रटन्त या बुद्धि का संग्रह नहीं है। यह आत्मज्ञान है - “मैं शरीर नहीं, मैं चेतना हूँ”, “मैं परिस्थितियों का दास नहीं, मैं साक्षी हूँ”, “मेरा वास्तविक स्वरूप शुद्ध, शान्त और अविनाशी है।” जब मनुष्य यह अनुभव कर लेता है, तब उसके भीतर की अशुद्धियाँ - भय, द्वेष, क्रोध, ईर्ष्या, मोह - स्वतः नष्ट होने लगती हैं। इसलिए श्रीकृष्ण कहते हैं कि ज्ञान से अधिक पवित्र करने वाला इस संसार में कुछ भी नहीं।</p>
+
+<p>अब प्रश्न उठता है - यह ज्ञान मिलता कैसे है? क्या इसे कोई गुरु दे सकता है? क्या इसे खरीदा जा सकता है? क्या इसे केवल पढ़कर पाया जा सकता है? श्लोक का दूसरा भाग इसका उत्तर देता है - “तत्स्वयं योगसंसिद्धः कालेनात्मनि विन्दति” अर्थात् योग में सिद्ध हुआ मनुष्य, समय के साथ इस ज्ञान को स्वयं अपने भीतर पा लेता है।</p>
+
+<p>यहाँ “योग” का अर्थ केवल आसन-प्राणायाम नहीं है। योग का वास्तविक अर्थ है - चित्त का संयम और भीतर की ओर यात्रा। जब मनुष्य ध्यान, जागरूकता, निरन्तर आत्मचिन्तन और निष्काम कर्म के द्वारा अपने मन को शान्त करता है, तब धीरे-धीरे उसका मन दर्पण की तरह निर्मल होने लगता है। जैसे साफ दर्पण में चेहरा स्पष्ट दिखता है, वैसे ही शुद्ध मन में आत्मा का सत्य प्रकट होने लगता है।</p>
+
+<p>श्रीकृष्ण यह भी कहते हैं कि यह ज्ञान अचानक नहीं मिलता - “कालेन” - समय के साथ मिलता है। आध्यात्मिक ज्ञान कोई सूचना नहीं, बल्कि परिपक्वता है। जैसे बीज को वृक्ष बनने में समय लगता है, वैसे ही साधना को अनुभव बनने में समय लगता है। साधक जब निराश हुए बिना निरन्तर अभ्यास करता रहता है, तब एक दिन उसे अनुभव होता है कि जिसे वह बाहर खोज रहा था, वह तो उसके भीतर ही था।</p>
+
+<p>इस श्लोक का एक और महत्वपूर्ण संकेत है - ज्ञान बाहर से दिया नहीं जाता, भीतर से प्रकट होता है। गुरु, शास्त्र और साधना केवल मार्ग दिखाते हैं; परन्तु सत्य का अनुभव स्वयं आत्मा में होता है। इसलिए श्रीकृष्ण कहते हैं - “आत्मनि विन्दति” - वह अपने ही भीतर उसे प्राप्त करता है।</p>
+
+<p>अतः इस श्लोक का सार यह है कि मनुष्य का वास्तविक शुद्धिकरण कर्मकाण्ड से नहीं, आत्मबोध से होता है। जब मनुष्य अपने वास्तविक स्वरूप को जान लेता है, तब उसका जीवन बदल जाता है। उसके लिए संसार बन्धन नहीं रहता, कर्म बोझ नहीं रहते, और परिस्थितियाँ दुःख का कारण नहीं बनतीं। वह बाहरी सफलता से नहीं, आन्तरिक शान्ति से जीने लगता है।</p>
+
+<p><strong>गीता का संदेश:</strong><br>
+अज्ञान का नाश केवल ज्ञान से होता है और यह ज्ञान योग, धैर्य और निरन्तर साधना से एक दिन हमारे ही हृदय में प्रकट हो जाता है।</p>
+
+</div>
+</div>
+
+<!-- BOOKS -->
+<div id="books" class="container page">
+<div class="appBack" onclick="goHome()">← Back</div>
+
+<h2>📚 My Books</h2>
+
+<p class="whiteText">
+यहाँ आपको मेरी प्रकाशित आध्यात्मिक पुस्तकों के Kindle संस्करण मिलेंगे-
+</p>
+
+<!-- Hindi Kindle -->
+<a href="https://amzn.in/d/0e9Cdwbd" target="_blank" class="bookbtn">
+📖 Amazon Kindle Hindi Edition
+</a>
+
+<!-- English Kindle -->
+<a href="https://amzn.in/d/05yLXd5l" target="_blank" class="bookbtn">
+📘 Amazon Kindle English Edition
+</a>
+<div class="paperSection">
+
+<h3 class="paperTitle">📚 पेपरबैक संस्करण</h3>
+
+<p class="paperIntro">
+इसके साथ ही 12 वर्षों से हमारे साथ है - हमारा  पेपरबैक संस्करण:
+<strong>सारथी का संदेश, सृजन-माला, भारत माता, The Burning Life, The Theory of Zero Frequency, नचिकेता का तीसरा वर और सनातन के सात अध्याय।</strong>
+
+</p>
+<div class="booksMockup">
+ <img src="MO.png" alt="Gandharwa Anand Books Collection">
+</div>
+
+</div>   <!-- paperSection close -->
+</div>   <!-- books container close -->
+
+<!-- CONTACT -->
+<div id="contact" class="container page contact">
+<div class="appBack" onclick="goHome()">← Back</div>
+  
+<div class="contact-group">
+  
+<!-- Email -->
+<a href="mailto:zerofrequency1980@gmail.com">
+📧 Email Us
+</a>
+
+<!-- Facebook -->
+<a href="https://www.facebook.com/profile.php?id=61584377424224" target="_blank" rel="noopener noreferrer">
+📘 Facebook Page
+</a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/zero_frequency1980" target="_blank" rel="noopener noreferrer">
+📷 Instagram
+</a>
+
+<!-- YouTube -->
+<a href="https://www.youtube.com/@ZeroFrequency-k8m" target="_blank" rel="noopener noreferrer">
+▶ YouTube Channel
+</a>
+
+<!-- Telegram -->
+<a href="https://t.me/ZeroFrequency_app" target="_blank" rel="noopener noreferrer">
+✈ Telegram Channel
+</a>
+
+<!-- WhatsApp Channel -->
+<a href="https://whatsapp.com/channel/0029VbBQr9wFCCoMlBJnK81A" target="_blank" rel="noopener noreferrer">
+💬 WhatsApp Channel
+</a>
+
+<!-- Blog -->
+<a href="https://zerofrequencyhub.blogspot.com" target="_blank" rel="noopener noreferrer">
+📝 My Blog
+</a>
+<a href="privacy.html">
+🔐 Privacy Policy
+</a>
+<p class="tagline">Inner Peace, Infinite Riches</p>
+</div>
+
+<script>
+function openPage(id,title){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.getElementById('title').innerText = title;   // ⭐ यही fix है
+window.scrollTo(0,0);
+
+setTimeout(initGallery,300);
+}
+
+function goHome(){
+openPage('home','Home');
+}
+
+function initGallery(){
+
+const imgs=document.querySelectorAll('.gallery img');
+const viewer=document.getElementById('viewer');
+const viewImg=document.getElementById('viewImg');
+
+imgs.forEach(img=>{
+  img.addEventListener('click',function(){
+    viewer.style.display='flex';
+    viewImg.src=this.src;
+  });
+});
+
+}
+
+function closeImg(){
+document.getElementById('viewer').style.display='none';
+}
+</script>
+<div class="viewer" id="viewer" onclick="closeImg()">
+  <img id="viewImg">
+</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js');
+  });
+}
+</script>
+  <script>
+function openPrashn(){
+window.open("prashn.html","_self");
+}
+</script>
+<script>
+document.addEventListener('click', function(e) {
+
+  let link = e.target.closest('a');
+  if (!link) return;
+
+  let url = link.getAttribute('href');
+  if (!url) return;
+
+  // Allow email links (Gmail / mail apps)
+  if (url.startsWith('mailto:')) {
+    window.location.href = url;
+    return;
+  }
+
+  // internal pages ignore
+  if (url.startsWith('#') || url.startsWith('/')) return;
+
+  // open external websites in browser
+  if (url.startsWith('http')) {
+    e.preventDefault();
+    window.open(url, '_blank');
+  }
+
+});
+</script>
+</body>
+</html>

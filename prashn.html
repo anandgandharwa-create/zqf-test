@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>आत्मसंवाद - Zero Quantum Frequency</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#0f0f1a;
+color:white;
+margin:0;
+padding:20px;
+text-align:center;
+}
+
+h1{
+color:#c084fc;
+}
+
+.intro{
+max-width:600px;
+margin:20px auto;
+line-height:1.6;
+font-size:16px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+background:#6b2cff;
+color:white;
+padding:14px 22px;
+border-radius:12px;
+text-decoration:none;
+font-size:18px;
+}
+
+.note{
+margin-top:40px;
+font-size:14px;
+color:#ccc;
+line-height:1.5;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+}
+/* ===== Universal App Back Button ===== */
+.appBack{
+display:block;
+width:max-content;
+margin:14px 0 14px 14px;
+text-align:left;
+
+background:#4b2a73;
+color:#ffffff;
+padding:9px 16px;
+border-radius:12px;
+font-size:15px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,0.35);
+}
+
+.appBack:active{
+transform:scale(0.96);
+}
+</style>
+</head>
+
+<body>
+<div class="appBack" onclick="goBack()">← Back</div>
+<h1>आत्मसंवाद</h1>
+
+<div class="intro">
+कभी-कभी साधना में प्रश्न उठते हैं।  
+विचार शांत नहीं होते।  
+अनुभव स्पष्ट नहीं होता।  
+
+यदि आपके भीतर कोई सच्चा प्रश्न है,  
+आप यहाँ लिख सकते हैं।
+</div>
+
+<!-- GOOGLE FORM LINK YAHAN DALEIN -->
+<a href="https://forms.gle/8C9nRXF2J5aUk2Ys8" class="btn">
+अपना प्रश्न लिखें
+</a>
+
+<div class="note">
+• यहाँ भविष्यवाणी नहीं की जाती  
+• चिकित्सा या कानूनी सलाह नहीं दी जाती  
+• उत्तर आध्यात्मिक मार्गदर्शन के रूप में दिए जाते हैं  
+
+यह सेवा साधना हेतु है।
+</div>
+<script>
+function goBack(){
+if (window.history.length > 1){
+window.history.back();
+}else{
+window.location.href = "index.html";
+}
+}
+</script>
+</body>
+</html>
