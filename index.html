@@ -150,24 +150,30 @@ margin-top:10px;
 margin-bottom:28px;   /* 👈 यही gap बनाएगा */
 }
 
-/* Contact buttons group */
+/* Contact buttons group - Golden style */
 .contact-group a{
 display:block;
-background:#555;
-color:#f1e2a6;
-padding:15px;
-margin:14px auto;
+background:linear-gradient(45deg,#ffd700,#ffb300);
+color:#000;
+padding:16px;
+margin:24px auto;
 width:92%;
 max-width:380px;
-border-radius:16px;
+border-radius:18px;
 text-decoration:none;
 font-size:18px;
-transition:0.25s;
+font-weight:600;
+letter-spacing:0.4px;
+text-align:center;
+
+box-shadow:0 0 18px rgba(255,215,0,0.35);
+transition:all 0.28s ease;
 }
 
 .contact-group a:hover{
-background:#6a6a6a;
-transform:scale(1.03);
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 0 30px rgba(255,215,0,0.6);
+background:linear-gradient(45deg,#ffe066,#ffc107);
 }
 
 .engQuote{
