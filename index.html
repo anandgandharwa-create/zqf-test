@@ -11,9 +11,10 @@
 body{
 margin:0;
 font-family:system-ui;
-background:#071826;
+background: radial-gradient(circle at top,#071826,#0a2233,#05111c);
 color:#f1e2a6;
 text-align:center;
+overflow-x:hidden;
 }
 header{
 background:linear-gradient(90deg,#5b2c83,#402060);
@@ -363,9 +364,22 @@ margin:14px auto;
 font-weight:500;
 letter-spacing:0.4px;
 
-/* ✨ Divine Glow */
 text-shadow:
 0 0 6px rgba(255, 235, 150, 0.55),
+0 0 18px rgba(255,215,0,0.4),
+0 0 28px rgba(255,215,0,0.3);
+
+animation:divineGlow 4s ease-in-out infinite;
+}
+
+@keyframes divineGlow{
+
+0%{text-shadow:0 0 6px rgba(255,215,120,0.4);}
+
+50%{text-shadow:0 0 22px rgba(255,215,120,0.9);}
+
+100%{text-shadow:0 0 6px rgba(255,215,120,0.4);}
+
 }
   .coursePromo{
 max-width:380px;
@@ -436,6 +450,62 @@ font-weight:700;
 color:#ffd36b;
 margin-bottom:16px;
 }
+ /* Cosmic Energy Waves */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:200%;
+height:200%;
+
+background:
+radial-gradient(circle, rgba(255,215,0,0.08) 1px, transparent 1px);
+background-size:70px 70px;
+animation:cosmicMove 80s linear infinite;
+pointer-events:none;
+}
+@keyframes cosmicMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-1000px);
+}
+}
+ /* Mind OS Neural Animation */
+
+.mindos{
+position:relative;
+overflow:hidden;
+}
+
+.mindos::after{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:120%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.5),
+transparent
+);
+
+animation:neuralScan 3s infinite;
+}
+
+@keyframes neuralScan{
+
+0%{left:-120%;}
+
+100%{left:120%;}
+
+}
 </style>
 </head>
 
@@ -451,9 +521,9 @@ margin-bottom:16px;
 <a class="btn" onclick="openPage('books','Books')">Books</a>
 <a class="btn" onclick="openPage('courses','Courses')">Divine Access</a>
 <a class="btn" onclick="openPage('krishna','Krishna Code')">Krishna Code</a>
-<a class="btn" href="mindos.html" target="_blank">
+<a class="btn mindos" href="mindos.html" target="_blank">
 🧠 Mind OS
-</a>
+</a>>
 <a class="btn" onclick="openPage('contact','Contact')">Contact</a>
 
 <div class="footer">
