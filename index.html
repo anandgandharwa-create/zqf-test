@@ -70,47 +70,25 @@ box-shadow:0 0 18px rgba(255,215,0,0.2);
 .btn:hover{
 background:#121212;
 }
-/* HOME CARD GRID */
 
-.homeCard{
+/* ===== Universal App Back Button ===== */
+/* ===== Universal App Back Button ===== */
+/* ===== Universal App Back Button ===== */
+.appBack{
+display:block;
+width:max-content;
+margin:14px 0 14px 14px;
+text-align:left;
 
-background:#000;
-
-border-radius:22px;
-
-padding:24px 10px;
-
-font-size:17px;
-
-font-weight:600;
-
-color:#f1d78a;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
-gap:6px;
-
-box-shadow:
-0 0 20px rgba(255,215,0,0.25),
-inset 0 0 12px rgba(255,215,0,0.15);
-transition:0.3s;
+background:#4b2a73;
+color:#ffffff;
+padding:9px 16px;
+border-radius:12px;
+font-size:15px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,0.35);
 }
-.homeCard:hover{
-transform:translateY(-4px);
-box-shadow:
-0 0 30px rgba(255,215,0,0.45),
-inset 0 0 15px rgba(255,215,0,0.2);
-}
-.icon{
-font-size:26px;
-margin-bottom:4px;
-}
+
 .appBack:active{
 transform:scale(0.96);
 }
@@ -129,18 +107,14 @@ font-style:italic;
 .big{
 font-size:24px;
 }
-.quoteBox{
-margin-top:12px;
-color:#ffffff;
-font-style:italic;
-font-size:17px;
-opacity:0.9;
-}
+
 .footer{
 margin-top:40px;
 color:#aaa;
 font-size:14px;
 }
+
+
 .whiteText{
 color:#ffffff !important;
 }
@@ -159,12 +133,13 @@ background:linear-gradient(45deg,#ffd700,#ffb300);
 box-shadow:0 0 18px rgba(255,215,0,0.35);
 transition:0.25s;
 }
+
 .bookbtn:hover{
 transform:scale(1.03);
 box-shadow:0 0 28px rgba(255,215,0,0.6);
 }
 
- /* Back button spacing */
+  /* Back button spacing */
 .back{
 display:inline-block;
 background:#666;
@@ -441,7 +416,7 @@ letter-spacing:2px;
 margin-top:10px;
 margin-bottom:10px;
 }
- .reviewBox{
+  .reviewBox{
 max-width:380px;
 margin:35px auto 10px;
 padding:20px;
@@ -469,53 +444,21 @@ margin-bottom:16px;
 
 <!-- HOME -->
 <div id="home" class="container page active">
-
 <h1>Zero Quantum<br>Frequency™</h1>
-
 <div class="subtitle">- RETURN TO YOUR ORIGINAL STATE -</div>
-<div class="quoteBox">
-Return to Zero - Where Silence Speaks
-</div>
 
-<div class="homeCards">
-
-<div class="homeCard" onclick="openPage('about','About Us')">
-<div class="icon">📜</div>
-About Us
-</div>
-
-<div class="homeCard" onclick="openPage('books','Books')">
-<div class="icon">📚</div>
-Books
-</div>
-
-<div class="homeCard" onclick="openPage('courses','Courses')">
-<div class="icon">✨</div>
-Divine Access
-</div>
-
-<div class="homeCard" onclick="openPage('krishna','Krishna Code')">
-<div class="icon">🕉️</div>
-Krishna Code
-</div>
-
-<a class="homeCard" href="mindos.html" target="_blank">
-<div class="icon">🧠</div>
-Mind OS
+<a class="btn" onclick="openPage('about','About Us')">About Us</a>
+<a class="btn" onclick="openPage('books','Books')">Books</a>
+<a class="btn" onclick="openPage('courses','Courses')">Divine Access</a>
+<a class="btn" onclick="openPage('krishna','Krishna Code')">Krishna Code</a>
+<a class="btn" href="mindos.html" target="_blank">
+🧠 Mind OS
 </a>
-
-<div class="homeCard" onclick="openPage('contact','Contact')">
-<div class="icon">📞</div>
-Contact
-</div>
-
-</div>
-
+<a class="btn" onclick="openPage('contact','Contact')">Contact</a>
 
 <div class="footer">
 Zero Quantum Frequency™ © Gandharwa Anand
 </div>
-
 </div>
 
 <!-- ABOUT -->
@@ -631,7 +574,7 @@ cursor:pointer;">
 <p>यदि आप जीवन की भागदौड़ से थक चुके हैं, यदि आप मन के शोर से ऊपर उठकर मौन की शक्ति को जानना चाहते हैं, तो यह कोर्स आपके लिए है।</p>
 
 <div class="courseClosing">
-ZQ Frequency Starter – क्योंकि सच्ची समृद्धि भीतर की शांति से प्रारंभ होती है।
+ZQ Frequency Starter - क्योंकि सच्ची समृद्धि भीतर की शांति से प्रारंभ होती है।
 </div>
 
 <!-- QUESTION BUTTON (BOTTOM) -->
@@ -741,10 +684,8 @@ font-size:18px;
 font-weight:bold;
 box-shadow:0 0 18px rgba(255,215,0,0.4);
 ">
-▶ गीता ज्ञान – YouTube पर देखें
+▶ गीता ज्ञान - YouTube पर देखें
 </a>
-
-</div>
 
 </div>
 </div>
@@ -778,7 +719,6 @@ box-shadow:0 0 18px rgba(255,215,0,0.4);
 <strong>सारथी का संदेश, सृजन-माला, भारत माता, The Burning Life, The Theory of Zero Frequency, नचिकेता का तीसरा वर और सनातन के सात अध्याय।</strong>
 
 </p>
-
 <div class="booksMockup">
  <img src="MO.png" alt="Gandharwa Anand Books Collection">
 </div>
