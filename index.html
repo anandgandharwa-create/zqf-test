@@ -436,6 +436,78 @@ font-weight:700;
 color:#ffd36b;
 margin-bottom:16px;
 }
+ /* ===== Modern Home UI ===== */
+
+.homeTop{
+width:100%;
+max-width:420px;
+background:linear-gradient(145deg,#1b2c3a,#0b1a26);
+border-radius:22px;
+padding:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+margin-bottom:25px;
+}
+
+.welcome{
+font-size:14px;
+color:#a7c4d6;
+}
+
+.appTitle{
+font-size:26px;
+font-weight:700;
+margin-top:6px;
+color:#ffffff;
+}
+
+.menuGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+width:100%;
+max-width:420px;
+margin-top:10px;
+}
+
+.menuCard{
+background:linear-gradient(145deg,#132532,#0a1823);
+border-radius:20px;
+padding:26px 12px;
+font-size:16px;
+color:#fff;
+cursor:pointer;
+transition:0.25s;
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+.menuCard:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 28px rgba(0,0,0,0.7);
+}
+
+.menuIcon{
+font-size:28px;
+margin-bottom:8px;
+display:block;
+}
+
+.bottomNav{
+position:fixed;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+background:#0d1c29;
+padding:10px 20px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+display:flex;
+gap:30px;
+}
+
+.bottomNav span{
+font-size:20px;
+cursor:pointer;
+}
 </style>
 </head>
 
@@ -444,21 +516,60 @@ margin-bottom:16px;
 
 <!-- HOME -->
 <div id="home" class="container page active">
-<h1>Zero Quantum<br>Frequency™</h1>
-<div class="subtitle">- RETURN TO YOUR ORIGINAL STATE -</div>
 
-<a class="btn" onclick="openPage('about','About Us')">About Us</a>
-<a class="btn" onclick="openPage('books','Books')">Books</a>
-<a class="btn" onclick="openPage('courses','Courses')">Divine Access</a>
-<a class="btn" onclick="openPage('krishna','Krishna Code')">Krishna Code</a>
-<a class="btn" href="mindos.html" target="_blank">
-🧠 Mind OS
-</a>
-<a class="btn" onclick="openPage('contact','Contact')">Contact</a>
+<div class="homeTop">
+
+<div class="welcome">Welcome</div>
+
+<div class="appTitle">
+Zero Quantum Frequency
+</div>
+
+<div style="margin-top:10px;font-size:14px;color:#9bb8c9;">
+Return to your original state
+</div>
+
+</div>
+
+
+<div class="menuGrid">
+
+<div class="menuCard" onclick="openPage('about','About Us')">
+<span class="menuIcon">🧭</span>
+About Us
+</div>
+
+<div class="menuCard" onclick="openPage('books','Books')">
+<span class="menuIcon">📚</span>
+Books
+</div>
+
+<div class="menuCard" onclick="openPage('courses','Divine Access')">
+<span class="menuIcon">✨</span>
+Divine Access
+</div>
+
+<div class="menuCard" onclick="openPage('krishna','Krishna Code')">
+<span class="menuIcon">🕉</span>
+Krishna Code
+</div>
+
+<div class="menuCard" onclick="location.href='mindos.html'">
+<span class="menuIcon">🧠</span>
+Mind OS
+</div>
+
+<div class="menuCard" onclick="openPage('contact','Contact')">
+<span class="menuIcon">📩</span>
+Contact
+</div>
+
+</div>
 
 <div class="footer">
 Zero Quantum Frequency™ © Gandharwa Anand
 </div>
+
 </div>
 
 <!-- ABOUT -->
