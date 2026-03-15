@@ -70,7 +70,39 @@ box-shadow:0 0 18px rgba(255,215,0,0.2);
 .btn:hover{
 background:#121212;
 }
+/* HOME CARD GRID */
 
+.homeCards{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+width:100%;
+max-width:420px;
+margin-top:20px;
+}
+
+.homeCard{
+background:#000;
+color:#e8d48a;
+padding:26px 10px;
+border-radius:20px;
+text-decoration:none;
+font-size:18px;
+font-weight:600;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+box-shadow:0 0 18px rgba(255,215,0,0.25);
+transition:0.25s;
+}
+
+.homeCard:hover{
+background:#141414;
+transform:scale(1.04);
+}
 /* ===== Universal App Back Button ===== */
 /* ===== Universal App Back Button ===== */
 /* ===== Universal App Back Button ===== */
@@ -444,21 +476,45 @@ margin-bottom:16px;
 
 <!-- HOME -->
 <div id="home" class="container page active">
+
 <h1>Zero Quantum<br>Frequency™</h1>
+
 <div class="subtitle">- RETURN TO YOUR ORIGINAL STATE -</div>
 
-<a class="btn" onclick="openPage('about','About Us')">About Us</a>
-<a class="btn" onclick="openPage('books','Books')">Books</a>
-<a class="btn" onclick="openPage('courses','Courses')">Divine Access</a>
-<a class="btn" onclick="openPage('krishna','Krishna Code')">Krishna Code</a>
-<a class="btn" href="mindos.html" target="_blank">
+
+<div class="homeCards">
+
+<div class="homeCard" onclick="openPage('about','About Us')">
+About Us
+</div>
+
+<div class="homeCard" onclick="openPage('books','Books')">
+Books
+</div>
+
+<div class="homeCard" onclick="openPage('courses','Courses')">
+Divine Access
+</div>
+
+<div class="homeCard" onclick="openPage('krishna','Krishna Code')">
+Krishna Code
+</div>
+
+<a class="homeCard" href="mindos.html" target="_blank">
 🧠 Mind OS
 </a>
-<a class="btn" onclick="openPage('contact','Contact')">Contact</a>
+
+<div class="homeCard" onclick="openPage('contact','Contact')">
+Contact
+</div>
+
+</div>
+
 
 <div class="footer">
 Zero Quantum Frequency™ © Gandharwa Anand
 </div>
+
 </div>
 
 <!-- ABOUT -->
