@@ -72,55 +72,45 @@ background:#121212;
 }
 /* HOME CARD GRID */
 
-.homeCards{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
-width:100%;
-max-width:420px;
-margin-top:20px;
-}
-
 .homeCard{
+
 background:#000;
-color:#e8d48a;
-padding:26px 10px;
-border-radius:20px;
-text-decoration:none;
-font-size:18px;
+
+border-radius:22px;
+
+padding:24px 10px;
+
+font-size:17px;
+
 font-weight:600;
 
+color:#f1d78a;
+
 display:flex;
+
+flex-direction:column;
+
 align-items:center;
+
 justify-content:center;
-text-align:center;
 
-box-shadow:0 0 18px rgba(255,215,0,0.25);
-transition:0.25s;
+gap:6px;
+
+box-shadow:
+0 0 20px rgba(255,215,0,0.25),
+inset 0 0 12px rgba(255,215,0,0.15);
+transition:0.3s;
 }
-
 .homeCard:hover{
-background:#141414;
-transform:scale(1.04);
+transform:translateY(-4px);
+box-shadow:
+0 0 30px rgba(255,215,0,0.45),
+inset 0 0 15px rgba(255,215,0,0.2);
 }
-/* ===== Universal App Back Button ===== */
-/* ===== Universal App Back Button ===== */
-/* ===== Universal App Back Button ===== */
-.appBack{
-display:block;
-width:max-content;
-margin:14px 0 14px 14px;
-text-align:left;
-
-background:#4b2a73;
-color:#ffffff;
-padding:9px 16px;
-border-radius:12px;
-font-size:15px;
-cursor:pointer;
-box-shadow:0 2px 8px rgba(0,0,0,0.35);
+.icon{
+font-size:26px;
+margin-bottom:4px;
 }
-
 .appBack:active{
 transform:scale(0.96);
 }
@@ -485,26 +475,32 @@ margin-bottom:16px;
 <div class="homeCards">
 
 <div class="homeCard" onclick="openPage('about','About Us')">
+<div class="icon">📜</div>
 About Us
 </div>
 
 <div class="homeCard" onclick="openPage('books','Books')">
+<div class="icon">📚</div>
 Books
 </div>
 
 <div class="homeCard" onclick="openPage('courses','Courses')">
+<div class="icon">✨</div>
 Divine Access
 </div>
 
 <div class="homeCard" onclick="openPage('krishna','Krishna Code')">
+<div class="icon">🕉️</div>
 Krishna Code
 </div>
 
 <a class="homeCard" href="mindos.html" target="_blank">
-🧠 Mind OS
+<div class="icon">🧠</div>
+Mind OS
 </a>
 
 <div class="homeCard" onclick="openPage('contact','Contact')">
+<div class="icon">📞</div>
 Contact
 </div>
 
