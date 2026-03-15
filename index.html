@@ -16,22 +16,31 @@ color:#f1e2a6;
 text-align:center;
 }
 header{
+position:sticky;
+top:0;
+width:100%;
+text-align:center;
+
 background:linear-gradient(90deg,#5b2c83,#402060);
-padding:18px;
+padding:18px 10px;
+
 font-size:22px;
 font-weight:bold;
-color:white;
+color:golden yellow;
+
+z-index:1000;
+box-shadow:0 4px 20px rgba(0,0,0,0.4);
 }
 
 .container{
-padding:20px;
+padding:25px 20px;
 max-width:420px;
 margin:auto;
 min-height:100vh;
 
 display:flex;
 flex-direction:column;
-align-items:center;   /* बाकी content center रहेगा */
+align-items:center;
 }
 
 .longtext{
