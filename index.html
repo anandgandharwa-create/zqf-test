@@ -41,8 +41,8 @@ min-height:100vh;
 display:flex;
 flex-direction:column;
 align-items:center;
+box-sizing:border-box;
 }
-
 .longtext{
 color:#ffffff;
 line-height:1.9;
@@ -449,14 +449,16 @@ margin-bottom:16px;
 
 .homeTop{
 width:100%;
-max-width:420px;
 background:linear-gradient(145deg,#1b2c3a,#0b1a26);
 border-radius:22px;
-padding:20px;
+padding:24px 18px;
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
-margin-bottom:25px;
-}
+margin:0 auto 25px auto;
+box-sizing:border-box;
 
+backdrop-filter: blur(8px);
+border:1px solid rgba(255,255,255,0.05);
+}
 .welcome{
 font-size:14px;
 color:#a7c4d6;
